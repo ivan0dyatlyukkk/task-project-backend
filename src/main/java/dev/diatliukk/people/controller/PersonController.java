@@ -28,8 +28,8 @@ public class PersonController {
     }
 
     @PostMapping("/add")
-    public HttpStatus savePerson(@RequestBody PersonEntity person) {
-        personService.saveOrUpdate(person);
-        return HttpStatus.OK;
+    public ResponseEntity<PersonEntity> savePerson(@RequestBody PersonEntity person) {
+
+        return new ResponseEntity<>(personService.saveOrUpdate(person), HttpStatus.OK);
     }
 }

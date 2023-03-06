@@ -24,8 +24,8 @@ public class PersonService {
                 Optional.empty();
     }
 
-    public void saveOrUpdate(PersonEntity person) {
-        personRepository.save(person);
+    public PersonEntity saveOrUpdate(PersonEntity person) {
+        return personRepository.save(person);
     }
 
 }
