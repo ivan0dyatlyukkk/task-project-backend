@@ -7,7 +7,6 @@ import lombok.NoArgsConstructor;
 
 import java.time.LocalDate;
 import java.time.Period;
-import java.util.Date;
 
 @Data
 @NoArgsConstructor
@@ -23,7 +22,7 @@ public class Person {
         return new Person(personEntity.getId(), personEntity.getFirstName(), personEntity.getLastName(), calculateAge(personEntity.getDateOfBirth()) );
     }
 
-    private static Integer calculateAge(LocalDate dateOfBirth) {
+    public static Integer calculateAge(LocalDate dateOfBirth) {
         LocalDate currentDate = LocalDate.now();
         return Period.between(dateOfBirth, currentDate).getYears();
     }
